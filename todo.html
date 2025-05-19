@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>My To-Do List</title>
+  <link rel="icon" type="image/x-icon" href="favicon.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <style>
+    body {
+      background: linear-gradient(135deg, #0d6efd, #6f42c1);
+      min-height: 100vh;
+      padding-top: 60px;
+      color: #fff;
+    }
+    .container {
+      max-width: 700px;
+      background: white;
+      color: black;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    }
+    .todo-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #f8f9fa;
+      padding: 10px 15px;
+      border-radius: 8px;
+      margin-bottom: 10px;
+    }
+    .todo-time {
+      font-size: 0.8rem;
+      color: #6c757d;
+    }
+        footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  padding: 1rem;
+  background-color: #0d6efd;
+  color: gray;
+}
+  </style>
+</head>
+<body onload="checkAuth()">
+
+  <div class="container">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+      <h2>📝 My To-Do List</h2>
+      <button onclick="logout()" class="btn btn-danger btn-sm">Logout</button>
+    </div>
+
+    <form onsubmit="addTodo(event)" class="mb-4">
+      <div class="input-group">
+        <input type="text" id="todoInput" class="form-control" placeholder="Add new task..." required />
+        <button class="btn btn-primary" type="submit">Add</button>
+      </div>
+    </form>
+
+    <div id="todoList"></div>
+  </div>
+    <footer class="text-center mt-5 mb-3 text-muted">
+    Built with ❤️ by <strong>Ravi Thakur</strong>
+  </footer>
+  <script src="todo.js"></script>
+</body>
+</html>
